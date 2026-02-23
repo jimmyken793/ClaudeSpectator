@@ -63,9 +63,9 @@ assert_success "which bash"           which bash
 
 echo ""
 echo "=== Sandbox: write operations (should fail) ==="
-assert_fail "touch file"              touch /tmp/claudecage-test
-assert_fail "mkdir dir"               mkdir /tmp/claudecage-test-dir
-assert_fail "write to file"           bash -c "echo x > /tmp/claudecage-test-file"
+assert_fail "touch file"              touch /tmp/claude-spectator-test
+assert_fail "mkdir dir"               mkdir /tmp/claude-spectator-test-dir
+assert_fail "write to file"           bash -c "echo x > /tmp/claude-spectator-test-file"
 assert_fail "rm file"                 rm -f /etc/hosts
 
 echo ""

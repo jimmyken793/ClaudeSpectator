@@ -8,7 +8,7 @@ Claude Code requires user approval for most Bash commands. Maintaining a large a
 
 ## Solution
 
-Instead of allowlists, claudecage wraps commands in an **OS-level read-only sandbox** enforced by the kernel. Any command prefixed with `sandbox-run` is guaranteed to:
+Instead of allowlists, claude-spectator wraps commands in an **OS-level read-only sandbox** enforced by the kernel. Any command prefixed with `sandbox-run` is guaranteed to:
 
 - **Read project files** — filesystem visibility for inspection
 - **Block credential access** — sensitive paths (`~/.ssh`, `~/.aws`, etc.) denied at kernel level

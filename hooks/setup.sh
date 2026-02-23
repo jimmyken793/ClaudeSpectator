@@ -10,7 +10,7 @@ mkdir -p "$LINK_DIR"
 
 # Symlink sandbox-run into PATH
 ln -sf "${PLUGIN_ROOT}/bin/sandbox-run" "$LINK_TARGET"
-echo "claudecage: linked ${LINK_TARGET} -> ${PLUGIN_ROOT}/bin/sandbox-run"
+echo "claude-spectator: linked ${LINK_TARGET} -> ${PLUGIN_ROOT}/bin/sandbox-run"
 
 # Platform-specific checks
 case "$(uname -s)" in
