@@ -1,5 +1,5 @@
 {
-  "name": "ClaudeSpectator",
+  "name": "claude-spectator",
   "description": "OS-level read-only sandbox for safe command execution",
   "author": {
     "name": "Jimmy Cheng",

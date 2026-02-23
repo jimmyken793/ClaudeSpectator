@@ -1,4 +1,4 @@
-# Plan: ClaudeSpectator — Claude Code Plugin for Sandboxed Command Execution
+# Plan: claude-spectator — Claude Code Plugin for Sandboxed Command Execution
 
 ## Context
 
@@ -9,7 +9,7 @@ Packaging this as a **Claude Code plugin** makes it installable on any machine w
 ## Plugin Structure
 
 ```
-ClaudeSpectator/
+claude-spectator/
 ├── .claude-plugin/
 │   └── plugin.json              # Plugin manifest
 ├── hooks/

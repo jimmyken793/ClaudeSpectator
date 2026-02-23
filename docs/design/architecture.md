@@ -1,4 +1,4 @@
-# ClaudeSpectator Architecture
+# claude-spectator Architecture
 
 ## Problem
 

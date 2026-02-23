@@ -6,10 +6,10 @@
   },
   "plugins": [
     {
-      "name": "ClaudeSpectator",
+      "name": "claude-spectator",
       "source": {
         "source": "github",
-        "repo": "jimmyken793/ClaudeSpectator"
+        "repo": "jimmyken793/claude-spectator"
       },
       "description": "OS-level read-only sandbox for safe, auto-approved command execution",
       "version": "1.0.0"

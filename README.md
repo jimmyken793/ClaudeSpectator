@@ -1,4 +1,4 @@
-# ClaudeSpectator
+# claude-spectator
 
 A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin that provides OS-level read-only sandboxing for safe, auto-approved command execution.
 
@@ -38,20 +38,20 @@ Claude Code ─── sandbox-run <cmd> ───▶ OS Sandbox ───▶ Com
 Inside a Claude Code session, first add the marketplace:
 
 ```
-/plugin marketplace add jimmyken793/ClaudeSpectator
+/plugin marketplace add jimmyken793/claude-spectator
 ```
 
 Then install the plugin:
 
 ```
-/plugin install ClaudeSpectator@jimmyken793
+/plugin install claude-spectator@jimmyken793
 ```
 
 Or install from a local clone:
 
 ```
-/plugin marketplace add /path/to/ClaudeSpectator
-/plugin install ClaudeSpectator@jimmyken793
+/plugin marketplace add /path/to/claude-spectator
+/plugin install claude-spectator@jimmyken793
 ```
 
 The permission hook automatically rewrites `sandbox-run` commands to use the plugin's own binary, so no PATH setup is required.
@@ -134,7 +134,7 @@ export SPECTATOR_NO_CRED_BLOCK=1
 ## Project Structure
 
 ```
-ClaudeSpectator/
+claude-spectator/
 ├── .claude-plugin/
 │   └── plugin.json            # Plugin manifest
 ├── bin/
@@ -182,7 +182,7 @@ Tests validate:
 
 ## Support
 
-If you find this useful, consider supporting development:
+If you find this useful, buy me a snack:
 
 [![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/jomican)
 
