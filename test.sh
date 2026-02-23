@@ -91,6 +91,15 @@ SPECTATOR_EXTRA_DENY="${EXTRA_TEST_DIR}" assert_fail "custom deny path" cat "${E
 rm -rf "$EXTRA_TEST_DIR"
 
 echo ""
+echo "=== Sandbox: SPECTATOR_NO_CRED_BLOCK (should succeed) ==="
+if [[ -d "${HOME}/.ssh" ]]; then
+  SPECTATOR_NO_CRED_BLOCK=1 assert_success "cred block off" bash -c "ls ${HOME}/.ssh/"
+else
+  # No .ssh dir to test, use a guaranteed path
+  SPECTATOR_NO_CRED_BLOCK=1 assert_success "cred block off" ls /etc
+fi
+
+echo ""
 echo "=== Permission hook: auto-approve sandbox-run ==="
 assert_hook_allows "sandbox-run cmd"      "sandbox-run git status"
 assert_hook_allows "sandbox-run with args" "sandbox-run ls -la /etc"

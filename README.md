@@ -110,6 +110,14 @@ Set `SPECTATOR_EXTRA_DENY` with colon-separated paths (relative to `$HOME` or ab
 export SPECTATOR_EXTRA_DENY=".config/stripe:.vault-token:/etc/shadow"
 ```
 
+**Disabling credential blocking:**
+
+Set `SPECTATOR_NO_CRED_BLOCK=1` to disable the default credential path blocking entirely:
+
+```bash
+export SPECTATOR_NO_CRED_BLOCK=1
+```
+
 ## Project Structure
 
 ```

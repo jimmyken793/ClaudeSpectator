@@ -1,0 +1,22 @@
+(version 1)
+(deny default)
+(import "system.sb")
+
+;; Allow all file reads (no credential blocking)
+(allow file-read*)
+
+;; Deny all file writes
+(deny file-write*)
+
+;; Allow process execution
+(allow process-fork)
+(allow process-exec)
+
+;; Allow signals to own process
+(allow signal (target self))
+
+;; Allow sysctl reads (needed by many tools)
+(allow sysctl-read)
+
+;; Deny network access
+(deny network*)

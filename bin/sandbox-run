@@ -8,20 +8,24 @@ PROFILE_DIR="${SCRIPT_DIR}/../profiles"
 export GIT_OPTIONAL_LOCKS=0
 
 # Default credential paths to block (relative to HOME)
-DENY_PATHS=(
-  .ssh
-  .aws
-  .gnupg
-  .config/gcloud
-  .azure
-  .kube
-  .docker
-  .netrc
-  .npmrc
-  .git-credentials
-  .config/gh
-  .local/share/keyrings
-)
+# Set SPECTATOR_NO_CRED_BLOCK=1 to disable default credential blocking
+DENY_PATHS=()
+if [[ "${SPECTATOR_NO_CRED_BLOCK:-}" != "1" ]]; then
+  DENY_PATHS=(
+    .ssh
+    .aws
+    .gnupg
+    .config/gcloud
+    .azure
+    .kube
+    .docker
+    .netrc
+    .npmrc
+    .git-credentials
+    .config/gh
+    .local/share/keyrings
+  )
+fi
 
 # Append user-defined extra deny paths (colon-separated, relative to HOME or absolute)
 if [[ -n "${SPECTATOR_EXTRA_DENY:-}" ]]; then
@@ -31,7 +35,11 @@ fi
 
 case "$(uname -s)" in
   Darwin)
-    PROFILE="${PROFILE_DIR}/readonly.sb"
+    if [[ "${SPECTATOR_NO_CRED_BLOCK:-}" == "1" ]]; then
+      PROFILE="${PROFILE_DIR}/readonly-nocred.sb"
+    else
+      PROFILE="${PROFILE_DIR}/readonly.sb"
+    fi
 
     # If extra deny paths are set, generate a dynamic profile
     # Rules must be inserted BEFORE (allow file-read*) since SBPL uses first-match
