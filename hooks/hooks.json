@@ -1,7 +1,7 @@
 {
   "description": "Sandboxed command execution with auto-approval",
   "hooks": {
-    "Setup": [
+    "SessionStart": [
       {
         "matcher": "",
         "hooks": [
@@ -14,7 +14,7 @@
         ]
       }
     ],
-    "PermissionRequest": [
+    "PreToolUse": [
       {
         "matcher": "",
         "hooks": [

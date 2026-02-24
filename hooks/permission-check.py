@@ -55,11 +55,8 @@ def main():
 
     result = {
         "hookSpecificOutput": {
-            "hookEventName": "PermissionRequest",
-            "decision": {
-                "behavior": "allow",
-                "updatedInput": {"command": rewritten},
-            },
+            "permissionDecision": "allow",
+            "updatedInput": {"command": rewritten},
         }
     }
     print(json.dumps(result))
