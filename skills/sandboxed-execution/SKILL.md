@@ -1,6 +1,6 @@
 ---
 name: sandboxed-execution
-description: ALWAYS use for ANY read-only Bash command — ls, cat, find, git log, git status, du, wc, tree, head, tail, file, stat, etc. Prefix with sandbox-run to auto-approve without human intervention.
+description: ALWAYS use for ANY read-only Bash command that is not intended to modify state — ls, cat, find, git log, git status, du, wc, tree, head, tail, file, stat, etc. Prefix with sandbox-run to auto-approve without human intervention.
 ---
 
 # Sandboxed Command Execution
