@@ -12,7 +12,7 @@
         "repo": "jimmyken793/claude-spectator"
       },
       "description": "OS-level read-only sandbox for safe, auto-approved command execution",
-      "version": "1.0.0"
+      "version": "1.1.1"
     }
   ]
 }
