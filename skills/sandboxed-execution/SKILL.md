@@ -50,6 +50,7 @@ Do **not** sandbox commands that need to write files or access the network:
 
 These should go through the normal permission flow.
 
-## Key Detail
+## Important Rules
 
-`sandbox-run` is auto-approved — no permission prompt will appear. This is safe because the OS kernel enforces the read-only and no-network constraints regardless of what command is run inside.
+- `sandbox-run` is auto-approved — no permission prompt will appear. This is safe because the OS kernel enforces the read-only and no-network constraints regardless of what command is run inside.
+- **Only use `sandbox-run` once**, at the very start of the command. Everything after it runs inside the sandbox. Do NOT repeat `sandbox-run` in chained commands — write `sandbox-run ls && cat file`, not `sandbox-run ls && sandbox-run cat file`.
